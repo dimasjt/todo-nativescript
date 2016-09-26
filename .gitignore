@@ -1,0 +1,7 @@
+app/**/*.js
+app/**/*.js.map
+node_modules/*
+hooks/
+platforms/
+tmp/
+typings/
