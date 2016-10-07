@@ -1,3 +1,17 @@
-<StackLayout>
-    <Label text="Hello"></Label>
-</StackLayout>
+<GridLayout rows="auto, *">
+    <GridLayout row="0" columns="*,*" columns="*, auto">
+        <TextField hint="New todo..." [(ngModel)]="newTodo" id="new-todo" col="0"></TextField>
+        <Button text="Add" col="1" (tap)="addTodo()"></Button>
+    </GridLayout>
+
+    <GridLayout row="1">
+        <ListView [items]="todos" class="small-spacing">
+            <template let-item="item">
+                <GridLayout columns="auto, *">
+                    <Button text="X" col="0" (tap)="deleteTodo(item)"></Button>
+                    <Label [text]="item.name" class="medium-spacing" col="1"></Label>
+                </GridLayout>
+            </template>
+        </ListView>
+    </GridLayout>
+</GridLayout>
